@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusEats — Order Campus Food Online</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Campus<span>Eats</span></div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')">Home</a></li>
+    <li><a href="#" onclick="showPage('menu')">Menu</a></li>
+    <li><a href="#" onclick="showPage('vendors')">Vendors</a></li>
+    <li><a href="#" onclick="showPage('order')">Order</a></li>
+  </ul>
+  <button class="nav-btn" onclick="showPage('order')">Order Now</button>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🎓 Made for University Students</div>
+      <h1>Skip the Queue,<br>Not the <span>Meal.</span></h1>
+      <p>Order your favorite campus food online and get it delivered to your hostel or lecture hall. Fast, affordable, and easy.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('menu')">🍽️ Browse Menu</button>
+        <button class="btn-secondary" onclick="showPage('vendors')">View Vendors</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>15+</strong><span>Campus Vendors</span></div>
+        <div class="stat"><strong>500+</strong><span>Happy Students</span></div>
+        <div class="stat"><strong>~20min</strong><span>Avg. Delivery</span></div>
+      </div>
+    </div>
+    <div class="hero-img">🍽️</div>
+  </section>
+
+  <div class="how-section">
+    <div class="how-inner">
+      <p class="section-label">Simple Process</p>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Three easy steps from hunger to happy in under 25 minutes.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">🔍</div>
+          <h3>Browse & Choose</h3>
+          <p>Explore menus from all campus vendors. Filter by category, price, or delivery time.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">📱</div>
+          <h3>Order & Pay</h3>
+          <p>Add items to cart and pay instantly with MTN Mobile Money or Airtel Money.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🚴</div>
+          <h3>Receive & Enjoy</h3>
+          <p>Your food is delivered to your hostel, library, or lecture hall. No queue, no stress.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">Popular Right Now</p>
+    <h2 class="section-title">Today's Top Picks</h2>
+    <p class="section-sub">Fresh meals from your favorite campus vendors, ready to order now.</p>
+    <div class="food-grid">
+      <div class="food-card" onclick="addToCart('Rolex Special', 3500)">
+        <div class="food-emoji">🌯</div>
+        <div class="food-info">
+          <div class="food-name">Rolex Special</div>
+          <div class="food-vendor">Mama Amina's Kitchen</div>
+          <div class="food-footer"><span class="food-price">UGX 3,500</span><button class="add-btn">+</button></div>
+          <div class="food-time">⏱ Ready in 10 min</div>
+        </div>
+      </div>
+      <div class="food-card" onclick="addToCart('Rice & Beans', 4000)">
+        <div class="food-emoji">🍛</div>
+        <div class="food-info">
+          <div class="food-name">Rice & Beans</div>
+          <div class="food-vendor">Campus Cafeteria</div>
+          <div class="food-footer"><span class="food-price">UGX 4,000</span><button class="add-btn">+</button></div>
+          <div class="food-time">⏱ Ready in 15 min</div>
+        </div>
+      </div>
+      <div class="food-card" onclick="addToCart('Chapati + Tea', 2500)">
+        <div class="food-emoji">🫓</div>
+        <div class="food-info">
+          <div class="food-name">Chapati + Tea</div>
+          <div class="food-vendor">Breakfast Corner</div>
+          <div class="food-footer"><span class="food-price">UGX 2,500</span><button class="add-btn">+</button></div>
+          <div class="food-time">⏱ Ready in 8 min</div>
+        </div>
+      </div>
+      <div class="food-card" onclick="addToCart('Posho & Stew', 5000)">
+        <div class="food-emoji">🍲</div>
+        <div class="food-info">
+          <div class="food-name">Posho & Stew</div>
+          <div class="food-vendor">Auntie Grace's</div>
+          <div class="food-footer"><span class="food-price">UGX 5,000</span><button class="add-btn">+</button></div>
+          <div class="food-time">⏱ Ready in 12 min</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <button class="btn-primary" onclick="showPage('menu')">View Full Menu →</button>
+    </div>
+  </div>
+</div>
+
+<!-- MENU PAGE -->
+<div id="menu" class="page">
+  <div style="background:var(--green); padding: 7rem 2rem 3rem; text-align:center;">
+    <p style="color:var(--orange); font-size:0.8rem; text-transform:uppercase; letter-spacing:2px;">All Items</p>
+    <h1 style="font-family:'Syne',sans-serif; color:white; font-size:2.5rem; font-weight:800;">Campus Menu</h1>
+    <p style="color:rgba(255,255,255,0.7); margin-top:0.5rem;">Fresh meals from 15+ campus vendors</p>
+  </div>
+  <div class="section">
+    <div class="categories">
+      <button class="cat-btn active">All</button>
+      <button class="cat-btn">Breakfast</button>
+      <button class="cat-btn">Lunch</button>
+      <button class="cat-btn">Dinner</button>
+      <button class="cat-btn">Snacks</button>
+      <button class="cat-btn">Drinks</button>
+    </div>
+    <div class="food-grid">
+      <div class="food-card" onclick="addToCart('Rolex Special', 3500)"><div class="food-emoji">🌯</div><div class="food-info"><div class="food-name">Rolex Special</div><div class="food-vendor">Mama Amina's Kitchen</div><div class="food-footer"><span class="food-price">UGX 3,500</span><button class="add-btn">+</button></div><div class="food-time">⏱ 10 min</div></div></div>
+      <div class="food-card" onclick="addToCart('Rice & Beans', 4000)"><div class="food-emoji">🍛</div><div class="food-info"><div class="food-name">Rice & Beans</div><div class="food-vendor">Campus Cafeteria</div><div class="food-footer"><span class="food-price">UGX 4,000</span><button class="add-btn">+</button></div><div class="food-time">⏱ 15 min</div></div></div>
+      <div class="food-card" onclick="addToCart('Chapati + Tea', 2500)"><div class="food-emoji">🫓</div><div class="food-info"><div class="food-name">Chapati + Tea</div><div class="food-vendor">Breakfast Corner</div><div class="food-footer"><span class="food-price">UGX 2,500</span><button class="add-btn">+</button></div><div class="food-time">⏱ 8 min</div></div></div>
+      <div class="food-card" onclick="addToCart('Posho & Stew', 5000)"><div class="food-emoji">🍲</div><div class="food-info"><div class="food-name">Posho & Stew</div><div class="food-vendor">Auntie Grace's</div><div class="food-footer"><span class="food-price">UGX 5,000</span><button class="add-btn">+</button></div><div class="food-time">⏱ 12 min</div></div></div>
+      <div class="food-card" onclick="addToCart('Fried Chicken', 6000)"><div class="food-emoji">🍗</div><div class="food-info"><div class="food-name">Fried Chicken</div><div class="food-vendor">Kuku Corner</div><div class="food-footer"><span class="food-price">UGX 6,000</span><button class="add-btn">+</button></div><div class="food-time">⏱ 20 min</div></div></div>
+      <div class="food-card" onclick="addToCart('Fresh Juice', 2000)"><div class="food-emoji">🥤</div><div class="food-info"><div class="food-name">Fresh Juice</div><div class="food-vendor">Juice Bar</div><div class="food-footer"><span class="food-price">UGX 2,000</span><button class="add-btn">+</button></div><div class="food-time">⏱ 5 min</div></div></div>
+      <div class="food-card" onclick="addToCart('Matoke & G-nut Sauce', 5500)"><div class="food-emoji">🍌</div><div class="food-info"><div class="food-name">Matoke & G-nut Sauce</div><div class="food-vendor">Auntie Grace's</div><div class="food-footer"><span class="food-price">UGX 5,500</span><button class="add-btn">+</button></div><div class="food-time">⏱ 15 min</div></div></div>
+      <div class="food-card" onclick="addToCart('Mandazi', 1500)"><div class="food-emoji">🍩</div><div class="food-info"><div class="food-name">Mandazi (x3)</div><div class="food-vendor">Breakfast Corner</div><div class="food-footer"><span class="food-price">UGX 1,500</span><button class="add-btn">+</button></div><div class="food-time">⏱ 5 min</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- VENDORS PAGE -->
+<div id="vendors" class="page">
+  <div style="background:var(--green); padding: 7rem 2rem 3rem; text-align:center;">
+    <p style="color:var(--orange); font-size:0.8rem; text-transform:uppercase; letter-spacing:2px;">Our Partners</p>
+    <h1 style="font-family:'Syne',sans-serif; color:white; font-size:2.5rem; font-weight:800;">Campus Vendors</h1>
+    <p style="color:rgba(255,255,255,0.7); margin-top:0.5rem;">15+ trusted food vendors on campus</p>
+  </div>
+  <div class="section">
+    <div class="vendor-grid">
+      <div class="vendor-card"><div class="vendor-icon">🌯</div><div><div class="vendor-name">Moonlight Restuarant</div><div class="vendor-meta">Rolex • Snacks • Drinks</div><div class="vendor-rating">⭐ 4.8 · Open Now</div></div></div>
+      <div class="vendor-card"><div class="vendor-icon">🍛</div><div><div class="vendor-name">Patience's Restuarant</div><div class="vendor-meta">Rice • Beans • Posho • Stew</div><div class="vendor-rating">⭐ 4.5 · Open Now</div></div></div>
+      <div class="vendor-card"><div class="vendor-icon">🥤</div><div><div class="vendor-name">Campus Juice Bar</div><div class="vendor-meta">Fresh Juices • Smoothies</div><div class="vendor-rating">⭐ 4.9 · Open Now</div></div></div>
+      <div class="vendor-card"><div class="vendor-icon">🍲</div><div><div class="vendor-name">Maama's canteen</div><div class="vendor-meta">Matoke • G-nut Sauce • Posho</div><div class="vendor-rating">⭐ 4.7 · Open Now</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER PAGE -->
+<div id="order" class="page">
+  <div class="order-hero">
+    <h1>Complete Your Order</h1>
+    <p>Fill in your details and we'll deliver to you!</p>
+  </div>
+  <div class="order-body">
+    <div class="order-summary">
+      <h3 style="font-family:'Syne',sans-serif; margin-bottom:1rem;">🛒 Order Summary</h3>
+      <div id="order-items">
+        <div class="order-item"><span>No items yet</span><span>-</span></div>
+      </div>
+      <div class="order-total"><span>Total</span><span id="order-total-price">UGX 0</span></div>
+    </div>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="e.g. Sarah Nakato">
+    </div>
+    <div class="form-group">
+      <label>Phone Number (for Mobile Money)</label>
+      <input type="tel" placeholder="e.g. 0771234567">
+    </div>
+    <div class="form-group">
+      <label>Delivery Location</label>
+      <select>
+        <option>Select location...</option>
+        <option>KK Hostels</option>
+        <option>white house Hostels</option>
+        <option>Library</option>
+        <option>Barham Hostels</option>
+        <option>London Hostels</option>
+        <option>Administration Block</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Payment Method</label>
+      <select>
+        <option>MTN Mobile Money</option>
+        <option>Airtel Money</option>
+        <option>Cash on Delivery</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Special Instructions (optional)</label>
+      <textarea rows="3" placeholder="e.g. No onions please, extra sauce..."></textarea>
+    </div>
+    <button class="btn-primary" style="width:100%; padding:1rem; font-size:1.1rem;" onclick="placeOrder()">
+      📱 Place Order & Pay
+    </button>
+  </div>
+</div>
+
+<!-- CART BAR -->
+<div class="cart-bar" id="cart-bar">
+  <div class="cart-count" id="cart-count">0</div>
+  <span id="cart-summary">items in cart</span>
+  <button class="nav-btn" onclick="showPage('order')">Checkout →</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>CampusEats</strong> · Order. Eat. Repeat.<br>
+  <span style="font-size:0.8rem; margin-top:0.3rem; display:block;">© 2026 CampusEats Uganda · Built for University Students</span>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>
